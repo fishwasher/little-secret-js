@@ -1,6 +1,6 @@
 # Little Secret text encoder/obfuscator
 
-This is a lightweight text encoder/obfuscator that encodes UTF-8 text using a secret passphrase and stores the result as Base64-encoded ASCII text.
+This is a lightweight text encoder/obfuscator that encodes UTF-8 text using a secret key and stores the result as Base64-encoded ASCII text.
 It makes use of TextEncoder web API which may not be supported by some older browsers.
 See https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder for details.
 
@@ -9,13 +9,13 @@ NOTE: This encoder is NOT intended to be used for cryptography purposes ;)
 ## Usage
 
 - Link `lscoder.js` (or `lscoder.min.js`) to a web page using a `script` tag;
-- Provide locally handled input for the passphrase to manage data coming from/to the server only on the client side.
+- Provide locally handled input for the secret key to manage data coming from/to the server only on the client side.
 - Encode data before uploading to the server and decode upon downloading back to the client.
 
         <script src="lscoder.js"></script>
         <script>
-          var pass = "my secret pass :)";
-          var Coder = new LittleSecret(pass);
+          var secret = "my secret pass :)";
+          var Coder = new LittleSecret(secret);
           var originalText = "Global warming is a hoax";
           var encodedText = Coder.encode(originalText);
           var decodedText = Coder.decode(encodedText);
