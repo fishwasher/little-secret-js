@@ -43,7 +43,7 @@ if (empty($_SESSION['user'])) {
 
 # welcome dear logged in user!
 
-$datafile = __DIR__ . '/__data.txt'; // here we store the secret data
+$datafile = __DIR__ . '/__data.txt'; // here we store encoded secret data
 $datakey = 'mydata'; // POST data key
 
 // processing data upload via POST
@@ -56,20 +56,24 @@ if ('POST' == $_SERVER['REQUEST_METHOD']) {
   reload();
 }
 
+#--------------------- processing logout
 if (isset($_GET['logout'])) {
   $_SESSION = null;
   session_destroy();
   reload();
 }
+#---------------------
 
-$upd_stat = '';
+$upd_stat = ''; #<---------- action success message from session
 if (isset($_SESSION['updated'])) {
   $upd_stat = $_SESSION['updated'] === false ? 'update failed' : $_SESSION['updated'] . ' bytes written';
   unset($_SESSION['updated']);
 }
+
+#---------------------- getting encoded text from the data file, if any
 $encoded_data = file_exists($datafile) ? file_get_contents($datafile) : '';
 
-// rendering HTML page with encoded data in
+#-------------------------- rendering HTML page with encoded data in
 ?><!doctype html><html lang="en">
 <head>
 <meta charset="utf-8">
