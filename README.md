@@ -14,14 +14,13 @@ NOTE: This encoder is NOT intended to be used for cryptography purposes ;)
 
         <script src="lscoder.js"></script>
         <script>
-          var secret = "my secret pass :)";
+          var secret = "my secret key 😎";
           var Coder = new LittleSecret(secret);
-          var originalText = "Global warming is a hoax";
+          var originalText = "A text to encode, so nobody 👀 this 💩.";
           var encodedText = Coder.encode(originalText);
           var decodedText = Coder.decode(encodedText);
 
-          console.log(originalText); // Global warming is a hoax
-          console.log(encodedText); // HQITFxMTBgpBFFhsZ2d4MGRgMiIufTot
+          console.log(encodedText); // RipuMGk6IXJhg5PavzstMWc9ZTETDOJILRa93YKe7HTZdGVPpDxvaGh+IQ==
           console.log(decodedText === originalText); // true
         </script>
 
