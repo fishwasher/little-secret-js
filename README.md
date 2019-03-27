@@ -8,6 +8,25 @@ NOTE: This encoder is NOT intended to be used for cryptography purposes ;)
 
 ## Usage
 
-- Link `lscoder.js` (or `lscoder.min.js`) to a web page using `script` tag;
-- Provide a locally handled input for the passphrase to manage data coming from/to the server on the client side.
+- Link `lscoder.js` (or `lscoder.min.js`) to a web page using a `script` tag;
+- Provide locally handled input for the passphrase to manage data coming from/to the server only on the client side.
 - Encode data before uploading to the server and decode upon downloading back to the client.
+
+        <script src="lscoder.js"></script>
+        <script>
+          var pass = "my secret pass :)";
+          var Coder = new LittleSecret(pass);
+          var originalText = "Global warming is a hoax";
+          var encodedText = Coder.encode(originalText);
+          var decodedText = Coder.decode(encodedText);
+
+          console.log(originalText); // Global warming is a hoax
+          console.log(encodedText); // HQITFxMTBgpBFFhsZ2d4MGRgMiIufTot
+          console.log(decodedText === originalText); // true
+        </script>
+
+## Examples
+
+Use _test.html_ to test LittleSecret in browser without server-side back-end.
+
+A 'Secret Notes' PHP demo application _demo.php_ might give you more clues about using this thing.
