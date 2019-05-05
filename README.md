@@ -28,4 +28,4 @@ NOTE: This encoder is NOT intended to be used for cryptography purposes ;)
 
 Use _test.html_ to test LittleSecret in browser without server-side back-end.
 
-"Secret Notes" PHP demo application in _demo.php_ might give you more clues about using this thing.
+"Secret Notes" PHP demo application in _demo.php_ might give you more clues about how and why to this thing.
