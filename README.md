@@ -1,6 +1,6 @@
 # Little Secret protected text encoder/decoder
 
-This is a lightweight text encoder/obfuscator that encodes UTF-8 text using a secret key and stores the result as Base64-encoded ASCII text.
+This is a lightweight text encoder that encodes UTF-8 text using a secret key and stores the result as Base64-encoded ASCII text.
 It makes use of TextEncoder web API which may not be supported by some older browsers.
 See https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder for details.
 
