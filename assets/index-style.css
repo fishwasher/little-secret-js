@@ -1,0 +1,82 @@
+body,
+.body,
+button {
+  font: 100 18px "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+    "Helvetica Neue", arial, helvetica, sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: #36c;
+  color: #ccf;
+}
+.mono {
+  font-family: monaco, "andale mono", "courier new", monospace;
+}
+main {
+  min-width: 640px;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+h1 {
+  font-size: 1.6rem;
+  font-weight: 100;
+}
+label {
+  display: block;
+  font-size: 1.1rem;
+  margin: 1rem 0;
+}
+textarea {
+  width: 100%;
+  font-size: 0.9rem;
+  color: #000;
+  resize: none;
+  border: 1px solid #ccc;
+}
+textarea.large {
+  overflow-y: scroll;
+  height: 10rem;
+}
+textarea.small {
+  height: 3rem;
+}
+
+button {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  padding: 1px 16px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 8px;
+  background: #ccc;
+  color: #404040;
+}
+button:hover {
+  background: #999;
+  color: #fff;
+}
+button:disabled {
+  background: #eee;
+  color: #a0a0a0;
+  cursor: not-allowed;
+}
+button::after {
+  margin-left: 8px;
+}
+
+#btn-encode::after {
+  content: "▼";
+}
+
+#btn-decode::after {
+  content: "▲";
+}
+
+#btn-reset::after {
+  content: "⟲";
+}
+
+.btn-clear::after {
+  content: "✖";
+}
